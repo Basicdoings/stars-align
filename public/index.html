@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b1d">
+  <meta name="description" content="Stars Align: a live Lagos party adventure for 2–8 players.">
+  <title>Stars Align · Lagos after dark</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/game-view.css">
+  <script src="/story.js" defer></script>
+  <script src="/audio-mixer.js" defer></script>
+  <script src="/world-engine.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-star">✦</span><span>STARS <b>ALIGN</b></span></div>
+      <div class="top-right"><span class="location">LAGOS · AFTER DARK</span><details class="sound-settings"><summary>Mix</summary><div class="sound-popover"><strong>Sound mix</strong><label>DJ music <output>55%</output><input type="range" min="0" max="100" value="55" data-audio-level="music" aria-label="DJ music volume"></label><label>People &amp; ambience <output>60%</output><input type="range" min="0" max="100" value="60" data-audio-level="ambience" aria-label="People and ambience volume"></label><label>Horns &amp; effects <output>50%</output><input type="range" min="0" max="100" value="50" data-audio-level="effects" aria-label="Horns and effects volume"></label><p id="audio-status" role="status">Tap anywhere to enable sound</p><a href="/audio-credits.html" target="_blank" rel="noopener">Audio credits</a></div></details><button id="music" class="music" type="button" aria-label="Mute all sound">♫ <span>Sound on</span></button></div>
+    </header>
+    <main id="app" aria-live="polite"></main>
+    <footer class="footer"><span>BLUEZI'S NIGHT IN LAGOS</span><span>LOCAL PLAYTEST · 2–8 PLAYERS</span></footer>
+  </div>
+  <audio id="song" src="/assets/bad-girl.mp3" loop preload="auto"></audio>
+</body>
+</html>

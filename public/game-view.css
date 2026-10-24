@@ -1,0 +1,73 @@
+/* World-first layout: narrative and decisions never fill the world. */
+.sound-settings{position:relative;z-index:40}.sound-settings>summary{cursor:pointer;list-style:none;padding:10px 12px;border:1px solid #6c5e7b;border-radius:25px;font-size:12px;min-height:44px;display:flex;align-items:center}.sound-popover{position:absolute;right:0;top:50px;width:min(280px,85vw);padding:18px;background:#151a29;border:1px solid #626075;border-radius:13px;box-shadow:0 12px 36px #0008}.sound-popover>strong{font-size:15px;color:#f4c892}.sound-popover label{display:block;margin-top:16px;font-size:12px}.sound-popover output{float:right;color:#eec28d}.sound-popover input{display:block;width:100%;min-height:28px;accent-color:#edba74}.sound-popover p,.sound-popover a{font-size:11px;color:#c9c9da;line-height:1.4}.sound-popover a{color:#f4c892}
+.is-playing .app-shell{max-width:none;padding:0 18px;height:100dvh;min-height:0}
+.is-playing .topbar{height:58px;min-height:58px}
+.is-playing .footer{display:none}
+.is-playing #app{min-height:0;padding-bottom:14px}
+.play-scene{height:100%;min-height:0!important;border-radius:18px;isolation:isolate;background:#161a29;overflow:hidden!important}
+.play-scene:before,.play-scene:after{display:none}
+.play-scene .world-view{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.play-scene #world-canvas{width:100%;height:100%;display:block;touch-action:none}
+.play-scene .ambient-story,.play-scene .world-door{display:none}
+.play-hud{position:absolute;inset:18px 20px auto;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;pointer-events:none;z-index:5}
+.location-chip{background:linear-gradient(90deg,#111622d9,#11162260);border-left:2px solid #e9b771;padding:10px 14px;border-radius:0 8px 8px 0;max-width:430px}
+.location-chip>span{font-size:9px;font-weight:700;letter-spacing:.2em;color:#f3c585}
+.location-chip h1{font:600 clamp(15px,1.7vw,23px)/1.2 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:5px 0 0}
+.compact-stats{display:flex;gap:20px;background:#101624c9;padding:12px 16px;border-radius:9px;font-size:10px;color:#c9c6d3;letter-spacing:.08em}
+.compact-stats b{display:block;font:600 18px 'Space Grotesk',sans-serif;color:#ffd29a;margin-top:3px}
+.play-scene .scoreboard{position:absolute;top:102px;right:20px;z-index:8;width:210px;padding:12px;margin:0;background:#101624df;border-color:#ffffff25;border-radius:10px;max-height:40%;overflow:auto}
+.play-scene .scoreboard summary{font-size:10px}
+.play-scene .scoreboard .rows{display:block}
+.decision-dock{position:absolute;bottom:20px;right:20px;width:min(360px,32%);max-height:65%;overflow:auto;z-index:10;scrollbar-width:thin}
+.decision-dock .thought-field{margin:0;width:100%;max-width:none;background:#101624ed;border:1px solid #c4b6df33;padding:15px;border-radius:14px;box-shadow:0 12px 40px #0005}
+.decision-dock .thought-bubble{margin:5px 0 12px;background:transparent;color:#fff;box-shadow:none;padding:0;border-radius:0}
+.decision-dock .thought-bubble:after,.decision-dock .thought-bubble>span{display:none}
+.decision-dock .thought-bubble p,.decision-dock .prompt{font-size:16px;line-height:1.4}
+.decision-dock .response-list{display:flex;flex-direction:column;gap:7px}
+.decision-dock .response{min-height:48px;background:#252d3d;border-color:#5c6374;border-radius:8px}
+.decision-dock .response:hover:not(:disabled){background:#394152}
+.decision-dock .response.selected{background:#49402d;border-color:#e9b771}
+.decision-dock .response strong{font-size:12px}
+.decision-dock .response small{font-size:11px}
+.decision-dock .intel-card{display:flex;flex-direction:column;font-size:12px;padding:10px;margin:8px 0}
+.decision-dock .intel-card ul{max-height:100px;overflow:auto;font-size:11px}
+.decision-dock .intel-card{background:transparent;border:0;border-bottom:1px solid #ffffff26;border-radius:0;padding:0 0 9px;gap:5px}
+.decision-dock .intel-card>button{align-self:flex-start;min-height:44px;padding:7px 12px;font-size:11px}
+.clue-board summary{cursor:pointer;color:#e7c99f;font-size:11px;min-height:24px;padding-top:5px}
+.decision-dock .state-note{font-size:11px;line-height:1.4;margin-top:10px}
+.decision-dock .error-inline:empty{display:none}
+.decision-dock .rhythm-pad{min-height:54px;min-width:140px;font-size:14px}
+.decision-dock .pulse{width:34px;height:34px;margin:18px}
+.play-scene .world-help{left:20px;right:auto;bottom:18px;max-width:52%;font-size:10px;padding:7px 10px;background:#101624b5}
+.play-scene .world-hotspot{width:38px;height:38px;min-height:0;opacity:.85}
+.play-scene .world-hotspot b{display:none}
+.play-scene.phase-active .world-hotspots,.play-scene.phase-story .world-hotspots,.play-scene.phase-arrival .world-hotspots{display:none}
+.phase-story .world-help,.phase-arrival .world-help{display:none}
+.cinema-caption{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:min(660px,85%);text-align:center;z-index:6;padding:14px 20px;border-radius:10px;background:linear-gradient(90deg,transparent,#0a101ce8 18%,#0a101ce8 82%,transparent);pointer-events:none}
+.cinema-caption>span{font-size:10px;font-weight:800;letter-spacing:.2em;color:#ffd09a}
+.cinema-caption p{font:500 clamp(14px,1.5vw,19px)/1.5 'Space Grotesk',sans-serif;margin:8px 0 12px;text-shadow:0 2px 3px #000}
+.story-progress{display:flex;gap:5px;justify-content:center}
+.story-progress i{width:25px;height:2px;background:#ffffff30}
+.story-progress i.seen{background:#edba74}
+.explore-toast{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);max-width:85%;background:#101624db;border:1px solid #ffffff20;border-radius:10px;padding:12px 18px;text-align:center;pointer-events:none;z-index:6}
+.explore-toast b{display:block;font-size:13px;color:#ffd09a;margin-bottom:4px}
+.explore-toast span{font-size:11px;color:#dedde6}
+.explore-toast .countdown{font-size:12px}
+.play-scene .discover-notice{position:absolute;left:20px;bottom:65px;max-width:45%;z-index:9;font-size:12px}
+@media(max-width:700px){
+  .is-playing .app-shell{padding:0 6px}.is-playing .topbar{height:52px;min-height:52px;padding:0 6px}.is-playing #app{padding-bottom:6px}
+  .play-scene{border-radius:12px}.play-hud{inset:10px 10px auto;gap:8px}
+  .location-chip{padding:8px 9px;max-width:60%}.location-chip h1{font-size:14px}.location-chip>span{font-size:8px}
+  .compact-stats{gap:10px;padding:8px;font-size:8px}.compact-stats b{font-size:14px}
+  .play-scene .scoreboard{top:85px;right:10px;width:145px;padding:9px;max-height:24%}
+  .play-scene .scoreboard summary{font-size:9px}
+  .decision-dock{bottom:8px;left:8px;right:8px;width:auto;max-height:35%;border-radius:12px}
+  .decision-dock .thought-field{padding:10px 12px}.decision-dock .thought-bubble p,.decision-dock .prompt{font-size:14px;margin:7px 0}
+  .decision-dock .response strong{font-size:12px}.decision-dock .response{min-height:44px;padding:6px 9px}
+  .decision-dock .response small{font-size:10px}.decision-dock .challenge-top{font-size:9px;padding:0}
+  .play-scene .world-help{bottom:8px;left:8px;font-size:9px;max-width:95%}
+  .phase-active .world-help,.phase-review .world-help{display:none}
+  .cinema-caption{bottom:18px;width:94%;padding:12px 15px}.cinema-caption p{font-size:15px}
+  .explore-toast{bottom:35px;width:90%;max-width:90%}.play-scene .discover-notice{left:8px;bottom:90px;max-width:85%}
+}
+@media(prefers-reduced-motion:reduce){.play-scene *{scroll-behavior:auto!important}}
